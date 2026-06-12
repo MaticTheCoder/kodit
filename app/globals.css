@@ -1,10 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #1e3a5f;
-  --primary-light: #2a5280;
-  --accent: #f97316;
-  --accent-hover: #ea6c0a;
+  /* Light Steel paleta */
+  --steel-50: #f8f9fa;
+  --steel-100: #e9ecef;
+  --steel-200: #dee2e6;
+  --steel-300: #ced4da;
+  --steel-400: #adb5bd;
+  --steel-500: #6c757d;
+  --steel-600: #495057;
+  --steel-700: #343a40;
+  --steel-800: #212529;
 }
 
 html {
@@ -13,5 +19,6 @@ html {
 
 body {
   font-family: "Inter", system-ui, sans-serif;
-  color: #1a1a2e;
+  color: #212529;
+  background: #ffffff;
 }

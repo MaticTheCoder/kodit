@@ -26,10 +26,10 @@ export default function Zakaj() {
     <section id="zakaj" className="py-24 bg-white">
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1e3a5f] mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#212529] mb-4">
             Zakaj Kodit?
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto">
+          <p className="text-[#6c757d] max-w-xl mx-auto">
             Vse, kar potrebujete za spletno prisotnost — brez tehničnih zapletov.
           </p>
         </div>
@@ -38,13 +38,13 @@ export default function Zakaj() {
           {koristi.map((k) => (
             <div
               key={k.naslov}
-              className="bg-gray-50 rounded-2xl p-6 hover:shadow-md transition-shadow border border-gray-100"
+              className="bg-[#f8f9fa] rounded-2xl p-6 hover:shadow-md transition-shadow border border-[#dee2e6]"
             >
               <div className="text-4xl mb-4">{k.ikona}</div>
-              <h3 className="font-semibold text-[#1e3a5f] text-lg mb-2">
+              <h3 className="font-semibold text-[#212529] text-lg mb-2">
                 {k.naslov}
               </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{k.opis}</p>
+              <p className="text-[#6c757d] text-sm leading-relaxed">{k.opis}</p>
             </div>
           ))}
         </div>

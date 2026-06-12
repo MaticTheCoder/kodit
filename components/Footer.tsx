@@ -16,13 +16,13 @@ const pravne = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-400 py-16">
+    <footer className="bg-[#212529] text-[#adb5bd] py-16">
       <div className="max-w-5xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           <div>
             <div className="font-bold text-xl text-white mb-3">
               {"<"}
-              <span className="text-[#f97316]">kodit</span>
+              <span className="text-[#adb5bd]">kodit</span>
               {"/>"}
             </div>
             <p className="text-sm leading-relaxed">
@@ -69,7 +69,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-6 text-sm text-center">
+        <div className="border-t border-[#343a40] pt-6 text-sm text-center">
           © Kodit 2026. Vse pravice pridržane.
         </div>
       </div>

@@ -14,18 +14,18 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-[#dee2e6] shadow-sm">
       <div className="max-w-5xl mx-auto px-4 flex items-center justify-between h-16">
-        <a href="/" className="font-bold text-xl text-[#1e3a5f]">
+        <a href="/" className="font-bold text-xl text-[#212529]">
           {"<"}
-          <span className="text-[#f97316]">kodit</span>
+          <span className="text-[#6c757d]">kodit</span>
           {"/>"}
         </a>
 
-        <ul className="hidden md:flex gap-6 text-sm font-medium text-gray-600">
+        <ul className="hidden md:flex gap-6 text-sm font-medium text-[#6c757d]">
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="hover:text-[#1e3a5f] transition-colors">
+              <a href={l.href} className="hover:text-[#212529] transition-colors">
                 {l.label}
               </a>
             </li>
@@ -34,13 +34,13 @@ export default function Navbar() {
 
         <a
           href="#kontakt"
-          className="hidden md:inline-block bg-[#f97316] text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#ea6c0a] transition-colors"
+          className="hidden md:inline-block bg-[#212529] text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#343a40] transition-colors"
         >
           Pridobite ponudbo
         </a>
 
         <button
-          className="md:hidden p-2 text-gray-700"
+          className="md:hidden p-2 text-[#343a40]"
           onClick={() => setOpen(!open)}
           aria-label="Meni"
         >
@@ -51,12 +51,12 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-3">
+        <div className="md:hidden bg-white border-t border-[#dee2e6] px-4 py-4 flex flex-col gap-3">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-gray-700 hover:text-[#1e3a5f]"
+              className="text-sm font-medium text-[#343a40] hover:text-[#212529]"
               onClick={() => setOpen(false)}
             >
               {l.label}
@@ -64,7 +64,7 @@ export default function Navbar() {
           ))}
           <a
             href="#kontakt"
-            className="mt-2 bg-[#f97316] text-white text-sm font-semibold px-4 py-2 rounded-lg text-center hover:bg-[#ea6c0a]"
+            className="mt-2 bg-[#212529] text-white text-sm font-semibold px-4 py-2 rounded-lg text-center hover:bg-[#343a40]"
             onClick={() => setOpen(false)}
           >
             Pridobite ponudbo
