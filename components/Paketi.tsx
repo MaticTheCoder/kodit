@@ -3,10 +3,10 @@ import { IconStar, IconCheck } from "./icons";
 
 export default function Paketi() {
   return (
-    <section id="paketi" className="py-24 bg-white">
+    <section id="paketi" className="pt-20 pb-10 bg-white">
       <div className="max-w-5xl mx-auto px-4">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#212529] mb-4">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#212529] mb-3">
             Paketi in cene
           </h2>
           <p className="text-[#6c757d] max-w-xl mx-auto">
@@ -14,11 +14,11 @@ export default function Paketi() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           {paketi.map((p) => (
             <div
               key={p.ime}
-              className={`relative rounded-2xl p-8 flex flex-col bg-white ${
+              className={`relative rounded-2xl p-6 flex flex-col bg-white ${
                 p.priljubljen
                   ? "border-2 border-[#212529] shadow-sm"
                   : "border border-[#dee2e6]"
@@ -82,7 +82,7 @@ export default function Paketi() {
           </div>
         </div>
 
-        <p className="text-center text-[#6c757d] text-sm mt-6">
+        <p className="text-center text-[#6c757d] text-sm mt-4">
           Niste prepričani, kateri paket je pravi?{" "}
           <a href="#kontakt" className="text-[#212529] font-medium hover:underline">
             Pišite mi — svetujem brezplačno.

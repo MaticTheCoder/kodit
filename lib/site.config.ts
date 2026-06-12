@@ -94,4 +94,13 @@ export const reference = [
     slika: "/reference/kosmos-pohistvo.png",
     kategorija: "Pohištvo / e-commerce",
   },
+   {
+    ime: "Minikmont montaže",
+    opis: "Sodobna predstavitvena stran za montaže oken in vrat — katalog storitev, galerija in kontaktni obrazec.",
+    url: "",
+    slika: "/reference/minikmont.png",
+    kategorija: "Montaže oken in vrat",
+  },
+
+
 ];

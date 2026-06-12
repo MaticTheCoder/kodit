@@ -48,24 +48,28 @@ const koraki = [
 
 export default function ZakajPostopek() {
   return (
-    <section id="zakaj-postopek" className="min-h-screen  py-36 bg-white">
-      <div className="max-w-5xl mx-auto px-4 space-y-40">
+    <section id="zakaj-postopek" className="min-h-screen relative overflow-hidden py-24">
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-10"
+        style={{ backgroundImage: "url('/postopek_background.png')" }}
+        aria-hidden="true"
+      />
 
+      {/* CONTENT WRAPPER */}
+      <div className="relative max-w-5xl mx-auto px-4 space-y-24">
         {/* ZAKAJ */}
         <div className="flex flex-col md:flex-row items-center gap-12">
-
-          {/* TEXT */}
           <div className="md:w-1/2">
             <h2 className="text-3xl md:text-4xl font-bold text-[#212529]">
               Zakaj Kodit?
             </h2>
 
             <p className="text-[#495057] mt-3 leading-relaxed">
-              Vse, kar potrebujete za spletno prisotnost — brez tehničnih zapletov.
+              Vse, kar potrebujete za spletno prisotnost — brez tehničnih
+              zapletov.
             </p>
           </div>
 
-          {/* CARDS */}
           <div className="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-3">
             {koristi.map((k) => (
               <div
@@ -82,13 +86,10 @@ export default function ZakajPostopek() {
               </div>
             ))}
           </div>
-
         </div>
 
         {/* POSTOPEK */}
         <div className="flex flex-col md:flex-row-reverse items-center gap-12">
-
-          {/* TEXT */}
           <div className="md:w-1/2">
             <h2 className="text-3xl md:text-4xl font-bold text-[#212529]">
               Kako poteka?
@@ -99,31 +100,22 @@ export default function ZakajPostopek() {
             </p>
           </div>
 
-          {/* STEPS */}
           <div className="md:w-1/2 space-y-3">
             {koraki.map((k) => (
               <div
                 key={k.st}
                 className="flex gap-4 items-start bg-[#f8f9fa] border border-[#ced4da] rounded-xl p-4 hover:bg-white transition"
               >
-                <div className="text-lg font-black text-[#495057]">
-                  {k.st}
-                </div>
+                <div className="text-lg font-black text-[#495057]">{k.st}</div>
 
                 <div>
-                  <h3 className="font-semibold text-[#212529]">
-                    {k.naslov}
-                  </h3>
-                  <p className="text-sm text-[#6c757d]">
-                    {k.opis}
-                  </p>
+                  <h3 className="font-semibold text-[#212529]">{k.naslov}</h3>
+                  <p className="text-sm text-[#6c757d]">{k.opis}</p>
                 </div>
               </div>
             ))}
           </div>
-
         </div>
-
       </div>
     </section>
   );
