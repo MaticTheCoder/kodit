@@ -27,6 +27,7 @@ export default function Home() {
 
         <Reference />
         <OMeni />
+        <FAQ />
         <Kontakt />
       </main>
       <Footer />

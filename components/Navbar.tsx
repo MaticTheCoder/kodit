@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const links = [
   { label: "Zakaj Kodit", href: "#zakaj" },
@@ -11,9 +11,26 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      // bel postane, ko zapustimo hero (hero je visok cel ekran)
+      setScrolled(window.scrollY > window.innerHeight - 80);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
+        scrolled || open
+          ? "bg-white/95 backdrop-blur border-b border-[#e9ecef] shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-16">
         <a href="/" className="font-bold text-xl text-[#212529]">
           {"<"}

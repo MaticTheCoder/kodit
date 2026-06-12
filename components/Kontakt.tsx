@@ -105,14 +105,24 @@ export default function Kontakt() {
             )}
           </div>
 
+          
+
           <div className="lg:col-span-2 flex flex-col gap-6 justify-center">
+            <div className="bg-white rounded-xl p-4 border border-[#dee2e6]">
+              <p className="text-sm text-[#6c757d] leading-relaxed">
+                Odgovorim v 24 urah na delovni dan. Za nujne zadeve me pokličite
+                direktno.
+              </p>
+            </div>
             <div>
               <div className="text-[#6c757d] font-medium text-sm mb-1">E-pošta</div>
               <a href={`mailto:${siteConfig.email}`} className="text-[#212529] hover:underline">
                 {siteConfig.email}
               </a>
             </div>
+            
             {siteConfig.phone && (
+              
               <div>
                 <div className="text-[#6c757d] font-medium text-sm mb-1">Telefon</div>
                 <a href={`tel:${siteConfig.phone}`} className="text-[#212529] hover:underline">
@@ -121,15 +131,10 @@ export default function Kontakt() {
               </div>
             )}
             <div>
-              <div className="text-[#6c757d] font-medium text-sm mb-1">Lokacija</div>
-              <p className="text-[#343a40]">{siteConfig.location}</p>
+              
+              
             </div>
-            <div className="bg-white rounded-xl p-4 border border-[#dee2e6]">
-              <p className="text-sm text-[#6c757d] leading-relaxed">
-                Odgovorim v 24 urah na delovni dan. Za nujne zadeve me pokličite
-                direktno.
-              </p>
-            </div>
+            
           </div>
         </div>
       </div>

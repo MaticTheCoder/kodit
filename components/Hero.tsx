@@ -1,27 +1,32 @@
+import { IconClock, IconHandshake, IconShield } from "./icons";
+
+const stat = [
+  { Ikona: IconClock, glava: "7 dni", opis: "do objave strani" },
+  { Ikona: IconHandshake, glava: "En kontakt", opis: "za vse — direktno z mano" },
+  { Ikona: IconShield, glava: "Brez skrbi", opis: "vzdrževanje vključeno" },
+];
+
 export default function Hero() {
   return (
-<section id="hero" className="relative min-h-screen flex items-center overflow-hidden">      <div
-        className="absolute inset-0 bg-cover bg-center"
+    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-scroll md:bg-fixed"
         style={{ backgroundImage: "url('/hero.png')" }}
         aria-hidden="true"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"
+        className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/70 md:via-white/90 md:to-transparent"
         aria-hidden="true"
       />
 
-      <div className="relative w-full max-w-7xl mx-auto px-6 md:px-10 py-24">
-        <div className="max-w-xl md:w-[42%] text-left">
-          <span className="inline-block bg-white/70 text-[#6c757d] text-sm px-4 py-1.5 rounded-full mb-8 border border-[#dee2e6]">
-            Maribor · Slovenija
-          </span>
-
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-[#212529] mb-6">
+      <div className="relative w-full max-w-7xl mx-auto px-6 md:px-10 py-28 md:py-24">
+        <div className="max-w-xl md:w-[46%] text-left">
+          <h1 className="text-[2rem] leading-[1.15] sm:text-4xl md:text-5xl lg:text-6xl font-bold md:leading-[1.1] tracking-tight text-[#212529] mb-5">
             Spletne strani po meri —{" "}
             <span className="text-[#6c757d]">brez skrbi, brez tehnike.</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-[#6c757d] mb-10 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-[#6c757d] mb-8 leading-relaxed">
             Izdelava, gostovanje, domena in vzdrževanje. Vse uredimo za vas — vi
             se ukvarjajte s svojim poslom.
           </p>
@@ -41,19 +46,16 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="mt-16 grid grid-cols-3 gap-6 max-w-md border-t border-[#e9ecef] pt-8">
-            <div>
-              <div className="text-3xl font-bold text-[#212529]">7</div>
-              <div className="text-sm text-[#6c757d] mt-1">dni do objave</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-[#212529]">1</div>
-              <div className="text-sm text-[#6c757d] mt-1">kontakt za vse</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-[#212529]">24h</div>
-              <div className="text-sm text-[#6c757d] mt-1">odziv</div>
-            </div>
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-md border-t border-[#e9ecef] pt-8">
+            {stat.map((s) => (
+              <div key={s.glava} className="flex items-center sm:flex-col sm:items-start gap-3 sm:gap-2">
+                <s.Ikona className="w-7 h-7 shrink-0 text-[#212529]" />
+                <div>
+                  <div className="font-bold text-[#212529] leading-tight">{s.glava}</div>
+                  <div className="text-sm text-[#6c757d] leading-tight">{s.opis}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

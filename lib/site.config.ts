@@ -21,10 +21,13 @@ export const paketi = [
     lastnosti: [
       "Enostranska predstavitvena stran",
       "Predloga, prilagojena vam",
+      "Odlično deluje na telefonu",
       "Kontaktni obrazec",
-      "Osnovni SEO",
+      "SSL certifikat (varna povezava)",
+      "Osnovni SEO (najdljivost na Googlu)",
+      "Povezava z Google Zemljevidi",
     ],
-    brez: ["Google Business profil"],
+    brez: ["Podstrani", "Google Business profil"],
   },
   {
     ime: "Standard",
@@ -33,11 +36,12 @@ export const paketi = [
     priljubljen: true,
     rok: "14 dni",
     lastnosti: [
+      "Vse iz Osnovnega paketa",
       "Do 5 podstrani",
       "Oblikovanje po meri",
-      "Kontaktni obrazec",
-      "Osnovni SEO",
+      "Galerija / portfolio",
       "Google Business profil",
+      "Razširjen SEO",
     ],
     brez: [],
   },
@@ -48,13 +52,47 @@ export const paketi = [
     priljubljen: false,
     rok: "Po dogovoru",
     lastnosti: [
-      "Večje strani po meri",
-      "Oblikovanje po meri +",
-      "Kontaktni obrazec",
+      "Vse iz Standard paketa",
+      "Stran po meri (večje strani)",
+      "Rezervacije, katalog ali e-trgovina",
       "Napredni SEO",
-      "Google Business profil",
+      "Napredne integracije po želji",
+      "Prednostna podpora",
     ],
     brez: [],
+  },
+];
+
+// Mesečno vzdrževanje in gostovanje — dve stopnji.
+export const vzdrzevanje = [
+  {
+    ime: "Osnovno vzdrževanje",
+    cena: "20 €",
+    obdobje: "/mes",
+    letno: "ali 200 €/leto (2 meseca gratis)",
+    priljubljen: false,
+    lastnosti: [
+      "Domena .si",
+      "Gostovanje in SSL certifikat",
+      "E-poštni naslov (info@vašafirma.si)",
+      "Varnostne kopije",
+      "Manjši popravki vsebine",
+      "Posodobitve in nadzor delovanja",
+    ],
+  },
+  {
+    ime: "Vzdrževanje + oglaševanje",
+    cena: "od 49 €",
+    obdobje: "/mes",
+    letno: "+ proračun za oglase po dogovoru",
+    priljubljen: true,
+    lastnosti: [
+      "Vse iz osnovnega vzdrževanja",
+      "Upravljanje Google in Meta oglasov",
+      "Priprava in optimizacija oglasov",
+      "Mesečno poročilo o rezultatih",
+      "Svetovanje za več obiska in povpraševanj",
+    ],
   },
 ];
 
@@ -77,7 +115,7 @@ export const faq = [
   {
     vprasanje: "Ali dobim e-poštni naslov info@mojafirma.si?",
     odgovor:
-      "Da, en e-poštni naslov je vključen v vzdrževalni paket (15 €/mes ali 150 €/leto).",
+      "Da, en e-poštni naslov je vključen v vzdrževalni paket (20 €/mes ali 200 €/leto).",
   },
   {
     vprasanje: "Kaj se zgodi, če preneham plačevati vzdrževanje?",
@@ -86,6 +124,9 @@ export const faq = [
   },
 ];
 
+// Vsak projekt ima svoj stolpec: glavna "slika" zgoraj, pod njo pa
+// dodatne slike iz "galerija" (samo vrzi slike v /public/reference/ in
+// dodaj poti spodaj — toliko, kolikor jih hočeš pod posamezen projekt).
 export const reference = [
   {
     ime: "Kosmos Pohištvo",
@@ -93,14 +134,22 @@ export const reference = [
     url: "https://kosmos-pohistvo.si",
     slika: "/reference/kosmos-pohistvo.png",
     kategorija: "Pohištvo / e-commerce",
+    galerija: ["/reference/kosmos-pohistvo2.png", "/reference/kosmos-pohistvo3.png", "/reference/kosmos-pohistvo4.png"],
   },
-   {
+  {
     ime: "Minikmont montaže",
     opis: "Sodobna predstavitvena stran za montaže oken in vrat — katalog storitev, galerija in kontaktni obrazec.",
     url: "",
     slika: "/reference/minikmont.png",
     kategorija: "Montaže oken in vrat",
+    galerija: ["/reference/minikmont2.png", "/reference/minikmont3.png"],
   },
-
-
+  {
+    ime: "Beruzzo",
+    opis: "Predstavitvena stran za picerijo",
+    url: "",
+    slika: "/reference/beruzzo.png",
+    kategorija: "Picerija",
+    galerija: [] as string[],
+  },
 ];
