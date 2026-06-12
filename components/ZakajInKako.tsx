@@ -60,11 +60,11 @@ export default function ZakajPostopek() {
         {/* ZAKAJ */}
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#212529]">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--fg)]">
               Zakaj Kodit?
             </h2>
 
-            <p className="text-[#495057] mt-3 leading-relaxed">
+            <p className="text-[var(--fg-2)] mt-3 leading-relaxed">
               Vse, kar potrebujete za spletno prisotnost — brez tehničnih
               zapletov.
             </p>
@@ -74,13 +74,13 @@ export default function ZakajPostopek() {
             {koristi.map((k) => (
               <div
                 key={k.naslov}
-                className="bg-white border border-[#ced4da] rounded-xl p-4 shadow-sm hover:shadow-md transition"
+                className="bg-[var(--bg)] border border-[var(--border)] rounded-xl p-4 shadow-sm hover:shadow-md transition"
               >
-                <k.Ikona className="w-6 h-6 mb-2 text-[#212529]" />
-                <h3 className="font-semibold text-[#212529] text-sm mb-1">
+                <k.Ikona className="w-6 h-6 mb-2 text-[var(--fg)]" />
+                <h3 className="font-semibold text-[var(--fg)] text-sm mb-1">
                   {k.naslov}
                 </h3>
-                <p className="text-xs text-[#6c757d] leading-relaxed">
+                <p className="text-xs text-[var(--muted)] leading-relaxed">
                   {k.opis}
                 </p>
               </div>
@@ -91,11 +91,11 @@ export default function ZakajPostopek() {
         {/* POSTOPEK */}
         <div className="flex flex-col md:flex-row-reverse items-center gap-12">
           <div className="md:w-1/2">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#212529]">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--fg)]">
               Kako poteka?
             </h2>
 
-            <p className="text-[#495057] mt-3 leading-relaxed">
+            <p className="text-[var(--fg-2)] mt-3 leading-relaxed">
               Enostaven proces od prve ideje do objavljene strani.
             </p>
           </div>
@@ -104,13 +104,13 @@ export default function ZakajPostopek() {
             {koraki.map((k) => (
               <div
                 key={k.st}
-                className="flex gap-4 items-start bg-[#f8f9fa] border border-[#ced4da] rounded-xl p-4 hover:bg-white transition"
+                className="flex gap-4 items-start bg-[var(--surface)] border border-[var(--border)] rounded-xl p-4 hover:bg-[var(--bg)] transition"
               >
-                <div className="text-lg font-black text-[#495057]">{k.st}</div>
+                <div className="text-lg font-black text-[var(--fg-2)]">{k.st}</div>
 
                 <div>
-                  <h3 className="font-semibold text-[#212529]">{k.naslov}</h3>
-                  <p className="text-sm text-[#6c757d]">{k.opis}</p>
+                  <h3 className="font-semibold text-[var(--fg)]">{k.naslov}</h3>
+                  <p className="text-sm text-[var(--muted)]">{k.opis}</p>
                 </div>
               </div>
             ))}

@@ -23,16 +23,16 @@ export default function Kontakt() {
   }
 
   const inputClass =
-    "w-full bg-white border border-[#dee2e6] rounded-lg px-4 py-3 text-[#212529] placeholder-[#adb5bd] focus:outline-none focus:border-[#212529] transition-colors";
+    "w-full bg-[var(--bg)] border border-[var(--border)] rounded-lg px-4 py-3 text-[var(--fg)] placeholder-[var(--muted-2)] focus:outline-none focus:border-[var(--fg)] transition-colors";
 
   return (
-    <section id="kontakt" className="py-24 bg-[#f8f9fa] border-t border-[#e9ecef]">
+    <section id="kontakt" className="py-24 bg-[var(--surface)] border-t border-[var(--border)]">
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#212529] mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--fg)] mb-4">
             Stopite v stik
           </h2>
-          <p className="text-[#6c757d] max-w-xl mx-auto">
+          <p className="text-[var(--muted)] max-w-xl mx-auto">
             Pišite mi in v 24 urah se oglasim z brezplačnim nasvetom.
           </p>
         </div>
@@ -40,22 +40,22 @@ export default function Kontakt() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           <div className="lg:col-span-3">
             {poslano ? (
-              <div className="bg-white border border-[#dee2e6] rounded-2xl p-8 text-center">
-                <IconCheck className="w-12 h-12 mx-auto mb-4 text-[#212529]" />
-                <h3 className="text-xl font-semibold text-[#212529] mb-2">Hvala!</h3>
-                <p className="text-[#6c757d]">Oglasim se v 24 urah.</p>
+              <div className="bg-[var(--bg)] border border-[var(--border)] rounded-2xl p-8 text-center">
+                <IconCheck className="w-12 h-12 mx-auto mb-4 text-[var(--fg)]" />
+                <h3 className="text-xl font-semibold text-[var(--fg)] mb-2">Hvala!</h3>
+                <p className="text-[var(--muted)]">Oglasim se v 24 urah.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm text-[#495057] mb-1.5 font-medium">
+                    <label className="block text-sm text-[var(--fg-2)] mb-1.5 font-medium">
                       Ime in priimek *
                     </label>
                     <input name="ime" required className={inputClass} placeholder="Janez Novak" />
                   </div>
                   <div>
-                    <label className="block text-sm text-[#495057] mb-1.5 font-medium">
+                    <label className="block text-sm text-[var(--fg-2)] mb-1.5 font-medium">
                       E-pošta *
                     </label>
                     <input name="email" type="email" required className={inputClass} placeholder="janez@firma.si" />
@@ -63,14 +63,14 @@ export default function Kontakt() {
                 </div>
 
                 <div>
-                  <label className="block text-sm text-[#495057] mb-1.5 font-medium">
+                  <label className="block text-sm text-[var(--fg-2)] mb-1.5 font-medium">
                     Telefon (neobvezno)
                   </label>
                   <input name="telefon" type="tel" className={inputClass} placeholder="+386 40 000 000" />
                 </div>
 
                 <div>
-                  <label className="block text-sm text-[#495057] mb-1.5 font-medium">
+                  <label className="block text-sm text-[var(--fg-2)] mb-1.5 font-medium">
                     Kaj potrebujete? *
                   </label>
                   <textarea
@@ -83,10 +83,10 @@ export default function Kontakt() {
                 </div>
 
                 <label className="flex items-start gap-3 cursor-pointer">
-                  <input type="checkbox" name="gdpr" className="mt-1 accent-[#212529]" />
-                  <span className="text-sm text-[#6c757d]">
+                  <input type="checkbox" name="gdpr" className="mt-1 accent-[var(--fg)]" />
+                  <span className="text-sm text-[var(--muted)]">
                     Strinjam se z{" "}
-                    <a href="/zasebnost" className="text-[#212529] underline hover:no-underline" target="_blank">
+                    <a href="/zasebnost" className="text-[var(--fg)] underline hover:no-underline" target="_blank">
                       politiko zasebnosti
                     </a>{" "}
                     in dovoljujem obdelavo podatkov za namen odgovora na povpraševanje.
@@ -97,7 +97,7 @@ export default function Kontakt() {
 
                 <button
                   type="submit"
-                  className="w-full border border-[#212529] text-[#212529] hover:bg-[#212529] hover:text-white font-semibold py-4 rounded-lg transition-colors text-base"
+                  className="w-full border border-[var(--fg)] text-[var(--fg)] hover:bg-[#212529] hover:text-white font-semibold py-4 rounded-lg transition-colors text-base"
                 >
                   Pošljite povpraševanje
                 </button>
@@ -108,15 +108,15 @@ export default function Kontakt() {
           
 
           <div className="lg:col-span-2 flex flex-col gap-6 justify-center">
-            <div className="bg-white rounded-xl p-4 border border-[#dee2e6]">
-              <p className="text-sm text-[#6c757d] leading-relaxed">
+            <div className="bg-[var(--bg)] rounded-xl p-4 border border-[var(--border)]">
+              <p className="text-sm text-[var(--muted)] leading-relaxed">
                 Odgovorim v 24 urah na delovni dan. Za nujne zadeve me pokličite
                 direktno.
               </p>
             </div>
             <div>
-              <div className="text-[#6c757d] font-medium text-sm mb-1">E-pošta</div>
-              <a href={`mailto:${siteConfig.email}`} className="text-[#212529] hover:underline">
+              <div className="text-[var(--muted)] font-medium text-sm mb-1">E-pošta</div>
+              <a href={`mailto:${siteConfig.email}`} className="text-[var(--fg)] hover:underline">
                 {siteConfig.email}
               </a>
             </div>
@@ -124,8 +124,8 @@ export default function Kontakt() {
             {siteConfig.phone && (
               
               <div>
-                <div className="text-[#6c757d] font-medium text-sm mb-1">Telefon</div>
-                <a href={`tel:${siteConfig.phone}`} className="text-[#212529] hover:underline">
+                <div className="text-[var(--muted)] font-medium text-sm mb-1">Telefon</div>
+                <a href={`tel:${siteConfig.phone}`} className="text-[var(--fg)] hover:underline">
                   {siteConfig.phone}
                 </a>
               </div>

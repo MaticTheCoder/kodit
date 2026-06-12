@@ -17,7 +17,7 @@ const pravne = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-[#e9ecef] text-[#6c757d]">
+    <footer className="bg-[var(--bg)] border-t border-[var(--border)] text-[var(--muted)]">
       <div className="max-w-6xl mx-auto px-6 py-14">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
           <div className="col-span-2 md:col-span-1">
@@ -29,7 +29,7 @@ export default function Footer() {
                 height={32}
                 className="h-8 w-auto"
               />
-              <span className="font-bold text-xl text-[#212529] -ml-0.5 relative top-[3px]">odit</span>
+              <span className="font-bold text-xl text-[var(--fg)] -ml-0.5 relative top-[3px]">odit</span>
             </div>
             <p className="text-sm leading-relaxed max-w-xs">
               Spletne strani na ključ za slovenska podjetja. Vse na enem mestu,
@@ -37,18 +37,18 @@ export default function Footer() {
             </p>
             <a
               href="#kontakt"
-              className="inline-block mt-4 border border-[#212529] text-[#212529] text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#212529] hover:text-white transition-colors"
+              className="inline-block mt-4 border border-[var(--fg)] text-[var(--fg)] text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#212529] hover:text-white transition-colors"
             >
               Pridobite ponudbo
             </a>
           </div>
 
           <div>
-            <div className="font-semibold text-[#212529] mb-3 text-sm">Vsebina</div>
+            <div className="font-semibold text-[var(--fg)] mb-3 text-sm">Vsebina</div>
             <ul className="space-y-2">
               {sekcije.map((s) => (
                 <li key={s.href}>
-                  <a href={s.href} className="text-sm hover:text-[#212529] transition-colors">
+                  <a href={s.href} className="text-sm hover:text-[var(--fg)] transition-colors">
                     {s.label}
                   </a>
                 </li>
@@ -57,11 +57,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="font-semibold text-[#212529] mb-3 text-sm">Pravno</div>
+            <div className="font-semibold text-[var(--fg)] mb-3 text-sm">Pravno</div>
             <ul className="space-y-2">
               {pravne.map((p) => (
                 <li key={p.href}>
-                  <a href={p.href} className="text-sm hover:text-[#212529] transition-colors">
+                  <a href={p.href} className="text-sm hover:text-[var(--fg)] transition-colors">
                     {p.label}
                   </a>
                 </li>
@@ -70,18 +70,18 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="font-semibold text-[#212529] mb-3 text-sm">Kontakt</div>
+            <div className="font-semibold text-[var(--fg)] mb-3 text-sm">Kontakt</div>
             <div className="space-y-2 text-sm">
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="block hover:text-[#212529] transition-colors"
+                className="block hover:text-[var(--fg)] transition-colors"
               >
                 {siteConfig.email}
               </a>
               {siteConfig.phone && (
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="block hover:text-[#212529] transition-colors"
+                  className="block hover:text-[var(--fg)] transition-colors"
                 >
                   {siteConfig.phone}
                 </a>
@@ -91,9 +91,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-[#e9ecef] mt-12 pt-6 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between text-sm">
+        <div className="border-t border-[var(--border)] mt-12 pt-6 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between text-sm">
           <span>© Kodit 2026. Vse pravice pridržane.</span>
-          <span className="text-[#adb5bd]">Maribor · Slovenija</span>
+          <span className="text-[var(--muted-2)]">Maribor · Slovenija</span>
         </div>
       </div>
     </footer>

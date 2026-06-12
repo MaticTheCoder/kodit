@@ -3,12 +3,12 @@ import { reference } from "@/lib/site.config";
 
 export default function Reference() {
   return (
-    <section id="reference" className="pb-24 bg-white">
+    <section id="reference" className="pb-24 bg-[var(--bg)]">
       <div className="text-center mb-10 px-4">
-        <span className="text-[#6c757d] font-semibold text-sm uppercase tracking-wide">
+        <span className="text-[var(--muted)] font-semibold text-sm uppercase tracking-wide">
           Naše delo
         </span>
-        <h2 className="text-3xl md:text-4xl font-bold text-[#212529] mt-2">
+        <h2 className="text-3xl md:text-4xl font-bold text-[var(--fg)] mt-2">
           Poglejte, kako izgledajo naše strani v živo
         </h2>
       </div>
@@ -21,9 +21,9 @@ export default function Reference() {
                 href={r.url || undefined}
                 target={r.url ? "_blank" : undefined}
                 rel={r.url ? "noopener noreferrer" : undefined}
-                className="group relative block overflow-hidden rounded-xl border border-[#e9ecef] bg-white"
+                className="group relative block overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)]"
               >
-                <div className="relative aspect-[16/10] overflow-hidden bg-[#f8f9fa]">
+                <div className="relative aspect-[16/10] overflow-hidden bg-[var(--surface)]">
                   <Image
                     src={r.slika}
                     alt={r.ime}
@@ -52,7 +52,7 @@ export default function Reference() {
                   {r.galerija.map((slika, i) => (
                     <div
                       key={slika}
-                      className="overflow-hidden rounded-xl border border-[#e9ecef] bg-[#f8f9fa]"
+                      className="overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)]"
                     >
                       <Image
                         src={slika}

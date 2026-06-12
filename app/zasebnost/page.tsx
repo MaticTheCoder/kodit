@@ -7,14 +7,14 @@ export const metadata = {
 export default function Zasebnost() {
   return (
     <main className="max-w-3xl mx-auto px-4 py-24">
-      <h1 className="text-3xl font-bold text-[#212529] mb-2">Politika zasebnosti</h1>
-      <p className="text-gray-500 text-sm mb-8">
+      <h1 className="text-3xl font-bold text-[var(--fg)] mb-2">Politika zasebnosti</h1>
+      <p className="text-[var(--muted)] text-sm mb-8">
         Opomba: Ta dokument je osnutek. Pred objavo ga preglej in po potrebi prilagodi.
       </p>
 
-      <div className="prose prose-gray max-w-none space-y-6 text-gray-700 leading-relaxed">
+      <div className="prose prose-gray max-w-none space-y-6 text-[var(--fg-2)] leading-relaxed">
         <section>
-          <h2 className="text-xl font-semibold text-[#212529]">Upravljavec osebnih podatkov</h2>
+          <h2 className="text-xl font-semibold text-[var(--fg)]">Upravljavec osebnih podatkov</h2>
           <p>
             Upravljavec osebnih podatkov je Kodit ({siteConfig.email}), ki deluje v skladu z
             Uredbo (EU) 2016/679 (GDPR) in Zakonom o varstvu osebnih podatkov (ZVOP-2).
@@ -22,7 +22,7 @@ export default function Zasebnost() {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold text-[#212529]">Katere podatke zbiramo</h2>
+          <h2 className="text-xl font-semibold text-[var(--fg)]">Katere podatke zbiramo</h2>
           <p>
             Zbiramo le podatke, ki nam jih posredujete sami prek kontaktnega obrazca: ime,
             e-poštni naslov, telefonska številka (neobvezno) in vsebina sporočila.
@@ -30,7 +30,7 @@ export default function Zasebnost() {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold text-[#212529]">Namen obdelave</h2>
+          <h2 className="text-xl font-semibold text-[var(--fg)]">Namen obdelave</h2>
           <p>
             Podatke obdelujemo izključno za namen odgovora na vaše povpraševanje in sklenitev
             morebitnega poslovnega razmerja. Podatkov ne posredujemo tretjim osebam razen, če
@@ -39,7 +39,7 @@ export default function Zasebnost() {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold text-[#212529]">Hramba podatkov</h2>
+          <h2 className="text-xl font-semibold text-[var(--fg)]">Hramba podatkov</h2>
           <p>
             Podatke hranimo, dokler je to potrebno za namen, za katerega so bili zbrani, oziroma
             do vašega zahtevka za izbris.
@@ -47,11 +47,11 @@ export default function Zasebnost() {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold text-[#212529]">Vaše pravice</h2>
+          <h2 className="text-xl font-semibold text-[var(--fg)]">Vaše pravice</h2>
           <p>
             Imate pravico do dostopa, popravka, izbrisa, omejitve obdelave in prenosljivosti
             podatkov. Za uveljavljanje pravic nas kontaktirajte na{" "}
-            <a href={`mailto:${siteConfig.email}`} className="text-[#212529] hover:underline">
+            <a href={`mailto:${siteConfig.email}`} className="text-[var(--fg)] hover:underline">
               {siteConfig.email}
             </a>
             .
@@ -59,7 +59,7 @@ export default function Zasebnost() {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold text-[#212529]">Piškotki</h2>
+          <h2 className="text-xl font-semibold text-[var(--fg)]">Piškotki</h2>
           <p>
             Stran trenutno ne uporablja sledilnih piškotkov. Morebitna uvedba analitike bo
             sporočena z ustreznim obvestilom.
@@ -67,7 +67,7 @@ export default function Zasebnost() {
         </section>
       </div>
 
-      <a href="/" className="inline-block mt-10 text-[#212529] hover:underline font-medium">
+      <a href="/" className="inline-block mt-10 text-[var(--fg)] hover:underline font-medium">
         ← Nazaj na glavno stran
       </a>
     </main>

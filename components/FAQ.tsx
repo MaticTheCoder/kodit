@@ -6,13 +6,13 @@ export default function FAQ() {
   const [odprt, setOdprt] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 bg-white">
+    <section id="faq" className="py-24 bg-[var(--bg)]">
       <div className="max-w-3xl mx-auto px-4">
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#212529] mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--fg)] mb-4">
             Pogosta vprašanja
           </h2>
-          <p className="text-[#6c757d]">
+          <p className="text-[var(--muted)]">
             Odgovori na najpogostejša vprašanja strank.
           </p>
         </div>
@@ -21,19 +21,19 @@ export default function FAQ() {
           {faq.map((f, i) => (
             <div
               key={i}
-              className="bg-[#f8f9fa] rounded-xl border border-[#dee2e6] overflow-hidden"
+              className="bg-[var(--surface)] rounded-xl border border-[var(--border)] overflow-hidden"
             >
               <button
-                className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-medium text-[#212529] hover:bg-[#e9ecef] transition-colors"
+                className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-medium text-[var(--fg)] hover:bg-[var(--surface-2)] transition-colors"
                 onClick={() => setOdprt(odprt === i ? null : i)}
               >
                 <span>{f.vprasanje}</span>
-                <span className="text-[#adb5bd] shrink-0 text-xl leading-none">
+                <span className="text-[var(--muted-2)] shrink-0 text-xl leading-none">
                   {odprt === i ? "−" : "+"}
                 </span>
               </button>
               {odprt === i && (
-                <div className="px-6 pb-5 text-[#495057] text-sm leading-relaxed border-t border-[#dee2e6] pt-4">
+                <div className="px-6 pb-5 text-[var(--fg-2)] text-sm leading-relaxed border-t border-[var(--border)] pt-4">
                   {f.odgovor}
                 </div>
               )}

@@ -3,13 +3,13 @@ import { IconStar, IconCheck, IconChevronDown } from "./icons";
 
 export default function Paketi() {
   return (
-    <section id="paketi" className="min-h-screen pt-20 pb-10 bg-white">
+    <section id="paketi" className="min-h-screen pt-20 pb-10 bg-[var(--bg)]">
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#212529] mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--fg)] mb-3">
             Paketi in cene
           </h2>
-          <p className="text-[#6c757d] max-w-xl mx-auto">
+          <p className="text-[var(--muted)] max-w-xl mx-auto">
             Jasne cene, brez skritih stroškov.
           </p>
         </div>
@@ -18,10 +18,10 @@ export default function Paketi() {
           {paketi.map((p) => (
             <div
               key={p.ime}
-              className={`relative rounded-2xl p-6 flex flex-col bg-white ${
+              className={`relative rounded-2xl p-6 flex flex-col bg-[var(--bg)] ${
                 p.priljubljen
-                  ? "border-2 border-[#212529] shadow-sm"
-                  : "border border-[#dee2e6]"
+                  ? "border-2 border-[var(--fg)] shadow-sm"
+                  : "border border-[var(--border)]"
               }`}
             >
               {p.priljubljen && (
@@ -31,33 +31,33 @@ export default function Paketi() {
                 </span>
               )}
 
-              <h3 className="text-xl font-bold mb-1 text-[#212529]">{p.ime}</h3>
-              <p className="text-sm mb-4 text-[#6c757d]">{p.podnaslov}</p>
-              <div className="text-3xl font-bold mb-6 text-[#212529]">{p.cena}</div>
+              <h3 className="text-xl font-bold mb-1 text-[var(--fg)]">{p.ime}</h3>
+              <p className="text-sm mb-4 text-[var(--muted)]">{p.podnaslov}</p>
+              <div className="text-3xl font-bold mb-6 text-[var(--fg)]">{p.cena}</div>
 
               <ul className="flex-1 space-y-2 mb-6">
                 {p.lastnosti.map((l) => (
                   <li key={l} className="flex items-start gap-2 text-sm">
-                    <IconCheck className="w-4 h-4 mt-0.5 shrink-0 text-[#212529]" />
-                    <span className="text-[#495057]">{l}</span>
+                    <IconCheck className="w-4 h-4 mt-0.5 shrink-0 text-[var(--fg)]" />
+                    <span className="text-[var(--fg-2)]">{l}</span>
                   </li>
                 ))}
                 {p.brez.map((b) => (
-                  <li key={b} className="flex items-start gap-2 text-sm text-[#ced4da]">
+                  <li key={b} className="flex items-start gap-2 text-sm text-[var(--muted-2)]">
                     <span className="mt-0.5">—</span>
                     <span>{b}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="text-xs mb-6 text-[#adb5bd]">Rok: {p.rok}</div>
+              <div className="text-xs mb-6 text-[var(--muted-2)]">Rok: {p.rok}</div>
 
               <a
                 href="#kontakt"
                 className={`text-center py-3 rounded-lg font-semibold text-sm transition-colors ${
                   p.priljubljen
-                    ? "border border-[#212529] text-[#212529] hover:bg-[#212529] hover:text-white"
-                    : "border border-[#dee2e6] text-[#343a40] hover:border-[#adb5bd] hover:bg-[#f8f9fa]"
+                    ? "border border-[var(--fg)] text-[var(--fg)] hover:bg-[#212529] hover:text-white"
+                    : "border border-[var(--border)] text-[var(--fg)] hover:border-[var(--muted-2)] hover:bg-[var(--surface)]"
                 }`}
               >
                 Izberite paket
@@ -67,10 +67,10 @@ export default function Paketi() {
         </div>
 
         <div className="mt-12 mb-2 text-center">
-          <h3 className="text-2xl font-bold text-[#212529]">
+          <h3 className="text-2xl font-bold text-[var(--fg)]">
             Vzdrževanje in gostovanje
           </h3>
-          <p className="text-[#6c757d] text-sm mt-2 max-w-xl mx-auto">
+          <p className="text-[var(--muted)] text-sm mt-2 max-w-xl mx-auto">
             Po izdelavi za vse poskrbim jaz — vi se ne ukvarjate z ničemer tehničnim.
           </p>
         </div>
@@ -79,10 +79,10 @@ export default function Paketi() {
           {vzdrzevanje.map((v) => (
             <div
               key={v.ime}
-              className={`relative rounded-2xl p-6 flex flex-col bg-white ${
+              className={`relative rounded-2xl p-6 flex flex-col bg-[var(--bg)] ${
                 v.priljubljen
-                  ? "border-2 border-[#212529] shadow-sm"
-                  : "border border-[#dee2e6]"
+                  ? "border-2 border-[var(--fg)] shadow-sm"
+                  : "border border-[var(--border)]"
               }`}
             >
               {v.priljubljen && (
@@ -92,18 +92,18 @@ export default function Paketi() {
                 </span>
               )}
 
-              <h4 className="text-lg font-bold text-[#212529]">{v.ime}</h4>
+              <h4 className="text-lg font-bold text-[var(--fg)]">{v.ime}</h4>
               <div className="mt-2 mb-4">
-                <span className="text-3xl font-bold text-[#212529]">{v.cena}</span>
-                <span className="text-[#6c757d] text-sm">{v.obdobje}</span>
-                <div className="text-[#adb5bd] text-xs mt-0.5">{v.letno}</div>
+                <span className="text-3xl font-bold text-[var(--fg)]">{v.cena}</span>
+                <span className="text-[var(--muted)] text-sm">{v.obdobje}</span>
+                <div className="text-[var(--muted-2)] text-xs mt-0.5">{v.letno}</div>
               </div>
 
               <ul className="flex-1 space-y-2">
                 {v.lastnosti.map((l) => (
                   <li key={l} className="flex items-start gap-2 text-sm">
-                    <IconCheck className="w-4 h-4 mt-0.5 shrink-0 text-[#212529]" />
-                    <span className="text-[#495057]">{l}</span>
+                    <IconCheck className="w-4 h-4 mt-0.5 shrink-0 text-[var(--fg)]" />
+                    <span className="text-[var(--fg-2)]">{l}</span>
                   </li>
                 ))}
               </ul>
@@ -111,9 +111,9 @@ export default function Paketi() {
           ))}
         </div>
 
-        <p className="text-center text-[#6c757d] text-sm mt-4">
+        <p className="text-center text-[var(--muted)] text-sm mt-4">
           Niste prepričani, kateri paket je pravi?{" "}
-          <a href="#kontakt" className="text-[#212529] font-medium hover:underline">
+          <a href="#kontakt" className="text-[var(--fg)] font-medium hover:underline">
             Pišite mi — svetujem brezplačno.
           </a>
         </p>
@@ -122,7 +122,7 @@ export default function Paketi() {
           <a
             href="#reference"
             aria-label="Poglejte naše projekte"
-            className="group flex flex-col items-center gap-1 text-[#6c757d] hover:text-[#212529] transition-colors"
+            className="group flex flex-col items-center gap-1 text-[var(--muted)] hover:text-[var(--fg)] transition-colors"
           >
             <span className="text-xs font-medium uppercase tracking-wide">
               Poglejte naše delo

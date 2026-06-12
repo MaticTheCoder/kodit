@@ -11,6 +11,60 @@
   --steel-600: #495057;
   --steel-700: #343a40;
   --steel-800: #212529;
+
+  /* Semantične barve — svetli način */
+  --bg: #ffffff;
+  --surface: #f8f9fa;
+  --surface-2: #e9ecef;
+  --border: #dee2e6;
+  --fg: #212529;
+  --fg-2: #495057;
+  --muted: #6c757d;
+  --muted-2: #adb5bd;
+
+  --hero-overlay: linear-gradient(
+    to right,
+    #ffffff,
+    rgba(255, 255, 255, 0.95) 45%,
+    rgba(255, 255, 255, 0.7)
+  );
+}
+
+.dark {
+  --bg: #15171a;
+  --surface: #1d2024;
+  --surface-2: #25282d;
+  --border: #2e3338;
+  --fg: #f1f3f5;
+  --fg-2: #ced4da;
+  --muted: #9aa1a9;
+  --muted-2: #6c757d;
+
+  --hero-overlay: linear-gradient(
+    to right,
+    #15171a,
+    rgba(21, 23, 26, 0.95) 45%,
+    rgba(21, 23, 26, 0.6)
+  );
+}
+
+@media (min-width: 768px) {
+  :root {
+    --hero-overlay: linear-gradient(
+      to right,
+      #ffffff,
+      rgba(255, 255, 255, 0.9) 42%,
+      rgba(255, 255, 255, 0)
+    );
+  }
+  .dark {
+    --hero-overlay: linear-gradient(
+      to right,
+      #15171a,
+      rgba(21, 23, 26, 0.9) 42%,
+      rgba(21, 23, 26, 0)
+    );
+  }
 }
 
 html {
@@ -20,11 +74,15 @@ html {
 
 body {
   font-family: "Inter", system-ui, sans-serif;
-  color: #212529;
-  background: #ffffff;
-    height: 100%;
+  color: var(--fg);
+  background: var(--bg);
+  height: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.hero-overlay {
+  background: var(--hero-overlay);
+}
 
 .snap-block {
   scroll-snap-align: start;
