@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { siteConfig } from "@/lib/site.config";
 
 const sekcije = [
@@ -20,10 +21,15 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-14">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
           <div className="col-span-2 md:col-span-1">
-            <div className="font-bold text-xl text-[#212529] mb-3">
-              {"<"}
-              <span className="text-[#6c757d]">kodit</span>
-              {"/>"}
+            <div className="flex items-center mb-3" aria-label="Kodit">
+              <Image
+                src="/kodit_logo.png"
+                alt="Kodit logo"
+                width={32}
+                height={32}
+                className="h-8 w-auto"
+              />
+              <span className="font-bold text-xl text-[#212529] -ml-0.5 relative top-[3px]">odit</span>
             </div>
             <p className="text-sm leading-relaxed max-w-xs">
               Spletne strani na ključ za slovenska podjetja. Vse na enem mestu,
