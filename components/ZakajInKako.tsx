@@ -48,8 +48,8 @@ const koraki = [
 
 export default function ZakajPostopek() {
   return (
-    <section id="zakaj-postopek" className="py-20 bg-white">
-      <div className="max-w-5xl mx-auto px-4 space-y-20">
+    <section id="zakaj-postopek" className="min-h-screen  py-36 bg-white">
+      <div className="max-w-5xl mx-auto px-4 space-y-40">
 
         {/* ZAKAJ */}
         <div className="flex flex-col md:flex-row items-center gap-12">
