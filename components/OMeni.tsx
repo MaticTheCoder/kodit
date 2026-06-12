@@ -28,7 +28,7 @@ export default function OMeni() {
             </p>
             <a
               href="#kontakt"
-              className="inline-block bg-[#212529] hover:bg-[#343a40] text-white font-semibold px-6 py-3 rounded-xl transition-colors"
+              className="inline-block border border-[#212529] text-[#212529] hover:bg-[#212529] hover:text-white font-semibold px-6 py-3 rounded-lg transition-colors"
             >
               Stopimo v stik
             </a>

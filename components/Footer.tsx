@@ -16,13 +16,13 @@ const pravne = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#212529] text-[#adb5bd] py-16">
+    <footer className="bg-white border-t border-[#e9ecef] text-[#6c757d] py-16">
       <div className="max-w-5xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           <div>
-            <div className="font-bold text-xl text-white mb-3">
+            <div className="font-bold text-xl text-[#212529] mb-3">
               {"<"}
-              <span className="text-[#adb5bd]">kodit</span>
+              <span className="text-[#6c757d]">kodit</span>
               {"/>"}
             </div>
             <p className="text-sm leading-relaxed">
@@ -32,11 +32,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="font-semibold text-white mb-3 text-sm">Sekcije</div>
+            <div className="font-semibold text-[#212529] mb-3 text-sm">Sekcije</div>
             <ul className="space-y-2">
               {sekcije.map((s) => (
                 <li key={s.href}>
-                  <a href={s.href} className="text-sm hover:text-white transition-colors">
+                  <a href={s.href} className="text-sm hover:text-[#212529] transition-colors">
                     {s.label}
                   </a>
                 </li>
@@ -45,21 +45,21 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="font-semibold text-white mb-3 text-sm">Kontakt</div>
+            <div className="font-semibold text-[#212529] mb-3 text-sm">Kontakt</div>
             <div className="space-y-2 text-sm">
               <div>
-                <a href={`mailto:${siteConfig.email}`} className="hover:text-white transition-colors">
+                <a href={`mailto:${siteConfig.email}`} className="hover:text-[#212529] transition-colors">
                   {siteConfig.email}
                 </a>
               </div>
               <div>{siteConfig.location}</div>
             </div>
             <div className="mt-4">
-              <div className="font-semibold text-white mb-3 text-sm">Pravno</div>
+              <div className="font-semibold text-[#212529] mb-3 text-sm">Pravno</div>
               <ul className="space-y-2">
                 {pravne.map((p) => (
                   <li key={p.href}>
-                    <a href={p.href} className="text-sm hover:text-white transition-colors">
+                    <a href={p.href} className="text-sm hover:text-[#212529] transition-colors">
                       {p.label}
                     </a>
                   </li>
@@ -69,7 +69,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-[#343a40] pt-6 text-sm text-center">
+        <div className="border-t border-[#e9ecef] pt-6 text-sm text-center">
           © Kodit 2026. Vse pravice pridržane.
         </div>
       </div>

@@ -21,4 +21,10 @@ body {
   font-family: "Inter", system-ui, sans-serif;
   color: #212529;
   background: #ffffff;
+    height: 100%;
+}
+
+
+.snap-block {
+  scroll-snap-align: start;
 }

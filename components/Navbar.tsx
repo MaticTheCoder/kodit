@@ -4,7 +4,6 @@ import { useState } from "react";
 const links = [
   { label: "Zakaj Kodit", href: "#zakaj" },
   { label: "Paketi", href: "#paketi" },
-  { label: "Kako poteka", href: "#postopek" },
   { label: "Reference", href: "#reference" },
   { label: "O meni", href: "#omeni" },
   { label: "Kontakt", href: "#kontakt" },
@@ -14,8 +13,8 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-[#dee2e6] shadow-sm">
-      <div className="max-w-5xl mx-auto px-4 flex items-center justify-between h-16">
+    <nav className="fixed top-0 left-0 right-0 z-50">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-16">
         <a href="/" className="font-bold text-xl text-[#212529]">
           {"<"}
           <span className="text-[#6c757d]">kodit</span>
@@ -34,7 +33,7 @@ export default function Navbar() {
 
         <a
           href="#kontakt"
-          className="hidden md:inline-block bg-[#212529] text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#343a40] transition-colors"
+          className="hidden md:inline-block border border-[#212529] text-[#212529] text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#212529] hover:text-white transition-colors"
         >
           Pridobite ponudbo
         </a>
@@ -51,7 +50,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-white border-t border-[#dee2e6] px-4 py-4 flex flex-col gap-3">
+        <div className="md:hidden bg-white/95 backdrop-blur border-t border-[#e9ecef] px-6 py-4 flex flex-col gap-3">
           {links.map((l) => (
             <a
               key={l.href}
@@ -64,7 +63,7 @@ export default function Navbar() {
           ))}
           <a
             href="#kontakt"
-            className="mt-2 bg-[#212529] text-white text-sm font-semibold px-4 py-2 rounded-lg text-center hover:bg-[#343a40]"
+            className="mt-2 border border-[#212529] text-[#212529] text-sm font-semibold px-4 py-2 rounded-lg text-center hover:bg-[#212529] hover:text-white transition-colors"
             onClick={() => setOpen(false)}
           >
             Pridobite ponudbo

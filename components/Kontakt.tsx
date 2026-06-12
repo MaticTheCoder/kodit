@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { siteConfig } from "@/lib/site.config";
+import { IconCheck } from "./icons";
 
 export default function Kontakt() {
   const [poslano, setPoslano] = useState(false);
@@ -21,14 +22,17 @@ export default function Kontakt() {
     form.reset();
   }
 
+  const inputClass =
+    "w-full bg-white border border-[#dee2e6] rounded-lg px-4 py-3 text-[#212529] placeholder-[#adb5bd] focus:outline-none focus:border-[#212529] transition-colors";
+
   return (
-    <section id="kontakt" className="py-24 bg-[#212529] text-white">
+    <section id="kontakt" className="py-24 bg-[#f8f9fa] border-t border-[#e9ecef]">
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#212529] mb-4">
             Stopite v stik
           </h2>
-          <p className="text-[#adb5bd] max-w-xl mx-auto">
+          <p className="text-[#6c757d] max-w-xl mx-auto">
             Pišite mi in v 24 urah se oglasim z brezplačnim nasvetom.
           </p>
         </div>
@@ -36,90 +40,64 @@ export default function Kontakt() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           <div className="lg:col-span-3">
             {poslano ? (
-              <div className="bg-white/5 border border-white/15 rounded-2xl p-8 text-center">
-                <div className="text-4xl mb-4">✓</div>
-                <h3 className="text-xl font-semibold mb-2">Hvala!</h3>
-                <p className="text-[#adb5bd]">Oglasim se v 24 urah.</p>
+              <div className="bg-white border border-[#dee2e6] rounded-2xl p-8 text-center">
+                <IconCheck className="w-12 h-12 mx-auto mb-4 text-[#212529]" />
+                <h3 className="text-xl font-semibold text-[#212529] mb-2">Hvala!</h3>
+                <p className="text-[#6c757d]">Oglasim se v 24 urah.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm text-[#adb5bd] mb-1">
+                    <label className="block text-sm text-[#495057] mb-1.5 font-medium">
                       Ime in priimek *
                     </label>
-                    <input
-                      name="ime"
-                      required
-                      className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder-[#6c757d] focus:outline-none focus:border-[#adb5bd]"
-                      placeholder="Janez Novak"
-                    />
+                    <input name="ime" required className={inputClass} placeholder="Janez Novak" />
                   </div>
                   <div>
-                    <label className="block text-sm text-[#adb5bd] mb-1">
+                    <label className="block text-sm text-[#495057] mb-1.5 font-medium">
                       E-pošta *
                     </label>
-                    <input
-                      name="email"
-                      type="email"
-                      required
-                      className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder-[#6c757d] focus:outline-none focus:border-[#adb5bd]"
-                      placeholder="janez@firma.si"
-                    />
+                    <input name="email" type="email" required className={inputClass} placeholder="janez@firma.si" />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm text-[#adb5bd] mb-1">
+                  <label className="block text-sm text-[#495057] mb-1.5 font-medium">
                     Telefon (neobvezno)
                   </label>
-                  <input
-                    name="telefon"
-                    type="tel"
-                    className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder-[#6c757d] focus:outline-none focus:border-[#adb5bd]"
-                    placeholder="+386 40 000 000"
-                  />
+                  <input name="telefon" type="tel" className={inputClass} placeholder="+386 40 000 000" />
                 </div>
 
                 <div>
-                  <label className="block text-sm text-[#adb5bd] mb-1">
+                  <label className="block text-sm text-[#495057] mb-1.5 font-medium">
                     Kaj potrebujete? *
                   </label>
                   <textarea
                     name="sporocilo"
                     required
                     rows={4}
-                    className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder-[#6c757d] focus:outline-none focus:border-[#adb5bd] resize-none"
+                    className={`${inputClass} resize-none`}
                     placeholder="Kratko opišite vaše podjetje in kaj bi radi dosegli s spletno stranjo..."
                   />
                 </div>
 
                 <label className="flex items-start gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    name="gdpr"
-                    className="mt-1 accent-[#adb5bd]"
-                  />
-                  <span className="text-sm text-[#adb5bd]">
+                  <input type="checkbox" name="gdpr" className="mt-1 accent-[#212529]" />
+                  <span className="text-sm text-[#6c757d]">
                     Strinjam se z{" "}
-                    <a
-                      href="/zasebnost"
-                      className="underline hover:text-white"
-                      target="_blank"
-                    >
+                    <a href="/zasebnost" className="text-[#212529] underline hover:no-underline" target="_blank">
                       politiko zasebnosti
                     </a>{" "}
                     in dovoljujem obdelavo podatkov za namen odgovora na povpraševanje.
                   </span>
                 </label>
 
-                {napaka && (
-                  <p className="text-red-400 text-sm">{napaka}</p>
-                )}
+                {napaka && <p className="text-red-600 text-sm">{napaka}</p>}
 
                 <button
                   type="submit"
-                  className="w-full bg-white hover:bg-[#e9ecef] text-[#212529] font-semibold py-4 rounded-xl transition-colors text-lg"
+                  className="w-full border border-[#212529] text-[#212529] hover:bg-[#212529] hover:text-white font-semibold py-4 rounded-lg transition-colors text-base"
                 >
                   Pošljite povpraševanje
                 </button>
@@ -129,25 +107,25 @@ export default function Kontakt() {
 
           <div className="lg:col-span-2 flex flex-col gap-6 justify-center">
             <div>
-              <div className="text-[#adb5bd] font-semibold text-sm mb-1">E-pošta</div>
-              <a href={`mailto:${siteConfig.email}`} className="text-white hover:underline">
+              <div className="text-[#6c757d] font-medium text-sm mb-1">E-pošta</div>
+              <a href={`mailto:${siteConfig.email}`} className="text-[#212529] hover:underline">
                 {siteConfig.email}
               </a>
             </div>
             {siteConfig.phone && (
               <div>
-                <div className="text-[#adb5bd] font-semibold text-sm mb-1">Telefon</div>
-                <a href={`tel:${siteConfig.phone}`} className="text-white hover:underline">
+                <div className="text-[#6c757d] font-medium text-sm mb-1">Telefon</div>
+                <a href={`tel:${siteConfig.phone}`} className="text-[#212529] hover:underline">
                   {siteConfig.phone}
                 </a>
               </div>
             )}
             <div>
-              <div className="text-[#adb5bd] font-semibold text-sm mb-1">Lokacija</div>
-              <p className="text-white/80">{siteConfig.location}</p>
+              <div className="text-[#6c757d] font-medium text-sm mb-1">Lokacija</div>
+              <p className="text-[#343a40]">{siteConfig.location}</p>
             </div>
-            <div className="bg-white/5 rounded-xl p-4 border border-white/15">
-              <p className="text-sm text-[#adb5bd] leading-relaxed">
+            <div className="bg-white rounded-xl p-4 border border-[#dee2e6]">
+              <p className="text-sm text-[#6c757d] leading-relaxed">
                 Odgovorim v 24 urah na delovni dan. Za nujne zadeve me pokličite
                 direktno.
               </p>
