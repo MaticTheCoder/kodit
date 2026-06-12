@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #1e3a5f;
+  --primary-light: #2a5280;
+  --accent: #f97316;
+  --accent-hover: #ea6c0a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  color: #1a1a2e;
+}
